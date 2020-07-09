@@ -7,7 +7,7 @@
 
 Technical test for Senior Android Developer
 
-## Functional Features:
+## Functional Features
 1) Create a simple login, where the user must authenticate against a local database or SharedPreferences
 2) The stored data must be encrypted with some encryption algorithm such as AES256
 3) When making a valid login, it must direct a view that contains the title "hello <username>" and that shows a list of data from the following API: https://www.mindicador.cl/api
@@ -18,7 +18,7 @@ Technical test for Senior Android Developer
 8) It should be possible to go back from the detail view
 9) The main view must contain a logout button that returns to the login view
 
-## Non-Functional Features:
+## Non-Functional Features
 
 1) The language to use is Kotlin
 2) The architecture patterns to be used for this development are MVVM or MVP
@@ -32,33 +32,32 @@ Technical test for Senior Android Developer
 
 ## Technical Specs
 
-* Tech-stack
-    * Programming Language: Kotlin
-    * Dependency Injection: KodeIn
-    * Retrofit
-    * Android Jetpack
-        * Navigation
-        * LiveData
-        * Lifecycle
-        * ViewModel
-        * Room
-    *  Coil - image loading library with Kotlin idiomatic API
- 
-* Architecture
-    * Clean Architecture (at module level)
-    * MVVM + MVI (presentation layer)
-    * Dynamic feature modules
-    * Android Architecture components
-* Tests
-    * Unit Tests
-    * Mockito
-    * Kluent
-* Gradle
-    * Gradle Kotlin DSL
-    * Custom tasks
-    * Plugins 
-        * Ktlint
-        * Jacoco Code Coverage
+    * Tech-stack
+        * Programming Language: Kotlin
+        * Dependency Injection: KodeIn
+        * Retrofit
+        * Android Jetpack
+            * Navigation
+            * LiveData
+            * Lifecycle
+            * ViewModel
+            * Room
+        *  Coil - image loading library with Kotlin idiomatic API
+    * Architecture
+        * Clean Architecture (at module level)
+        * MVVM + MVI (presentation layer)
+        * Dynamic feature modules
+        * Android Architecture components
+    * Tests
+        * Unit Tests
+        * Mockito
+        * Kluent
+    * Gradle
+        * Gradle Kotlin DSL
+        * Custom tasks
+        * Plugins 
+            * Ktlint
+            * Jacoco Code Coverage
         
 ## Architecture
 
@@ -66,10 +65,11 @@ Feature related code is placed inside one of the feature modules.
 We can think about each feature as the equivalent of microservice or private library.
 
 The modularized code-base approach provides few benefits:
-- better separation of concerns. Each module has a clear API, Feature related classes life in different modules and can't be referenced without explicit module dependency.
-- features can be developed in parallel eg. by different teams
-- each feature can be developed in isolation, independently from other features
-- faster compile time 
+
+    * better separation of concerns. Each module has a clear API, Feature related classes life in different modules and can't be referenced without explicit module dependency.
+    * features can be developed in parallel eg. by different teams
+    * each feature can be developed in isolation, independently from other features
+    * faster compile time 
 
 ### Feature module structure
 
@@ -84,11 +84,12 @@ This layer is closest to what the user sees on the screen. The `presentation` la
 > Unidirectional Data Flow and Redux.
 
 Components:
-- **View (Fragment)** - presents data on the screen and pass user interactions to View Model. Views are hard to test, so they should be as simple as possible.
-- **ViewModel** - dispatches (through `LiveData`) state changes to the view and deals with user interactions (these view models are not simply POJO classes).
-- **ViewState** - common state for a single view
-- **Mapper** - class for mapping classes between layer for decouple responsibilities
-- **NavManager** - singleton that facilitates handling all navigation events inside `NavHostActivity` (instead of separately, inside each view)
+
+    * **View (Fragment)** - presents data on the screen and pass user interactions to View Model. Views are hard to test, so they should be as simple as possible.
+    * **ViewModel** - dispatches (through `LiveData`) state changes to the view and deals with user interactions (these view models are not simply POJO classes).
+    * **ViewState** - common state for a single view
+    * **Mapper** - class for mapping classes between layer for decouple responsibilities
+    * **NavManager** - singleton that facilitates handling all navigation events inside `NavHostActivity` (instead of separately, inside each view)
 
 #### Domain layer
 
@@ -96,25 +97,27 @@ This is the core layer of the application. Notice that the `domain` layer is ind
 In other words, changes in other layers will have no effect on `domain` layer eg. changing database (`data` layer) or screen UI (`presentation` layer) ideally will not result in any code change withing `domain` layer.
 
 Components:
-- **UseCase** - contains business logic
-- **DomainModel** - defies the core structure of the data that will be used within the application. This is the source of truth for application data.
-- **Repository interface** - required to keep the `domain` layer independent from the `data layer`.
+
+    * **UseCase** - contains business logic
+    * **DomainModel** - defies the core structure of the data that will be used within the application. This is the source of truth for application data.
+    * **Repository interface** - required to keep the `domain` layer independent from the `data layer`.
 
 #### Data layer
 
 Manages application data and exposes these data sources as repositories to the `domain` layer. Typical responsibilities of this layer would be to retrieve data from the internet and optionally cache this data locally.
 
 Components:
-- **Repository** is exposing data to the `domain` layer. Depending on application structure and quality of the external APIs repository can also merge, filter, and transform the data. The intention of
-these operations is to create high-quality data source for the `domain` layer, not to perform any business logic (`domain` layer `use case` responsibility).
 
-- **Mapper** - maps `data model` to `domain model` (to keep `domain` layer independent from the `data` layer).
-- **RetrofitService** - defines a set of API endpoints.
-- **DataModel** - defines the structure of the data retrieved from the network and contains annotations, so Retrofit (Moshi) understands how to parse this network data (XML, JSON, Binary...) this data into objects.
+    * **Repository** is exposing data to the `domain` layer. Depending on application structure and quality of the external APIs repository can also merge, filter, and transform the data. The intention of
+    these operations is to create high-quality data source for the `domain` layer, not to perform any business logic (`domain` layer `use case` responsibility).
+    * **Mapper** - maps `data model` to `domain model` (to keep `domain` layer independent from the `data` layer).
+    * **RetrofitService** - defines a set of API endpoints.
+    * **DataModel** - defines the structure of the data retrieved from the network and contains annotations, so Retrofit (Moshi) understands how to parse this network data (XML, JSON, Binary...) this data into objects.
 
 ## Ci pipeline
 
 These are all of the Gradle tasks (cmd commands) that are [executed by CI](/.circleci/circle.yml):
+
 * `./gradlew lintDummyDebug` - runs Android lint
 * `./gradlew detekt` - runs detekt
 * `./gradlew ktlintCheck` - runs ktlint
