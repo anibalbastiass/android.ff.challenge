@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_navigation_graph"
+    app:startDestination="@id/featureAuthNavGraph">
+
+    <include-dynamic
+        android:id="@+id/featureAuthNavGraph"
+        app:graphResName="feature_auth_nav_graph"
+        app:moduleName="auth"/>
+
+    <include-dynamic
+        android:id="@+id/featureCurrenciesNavGraph"
+        app:graphResName="feature_currencies_nav_graph"
+        app:moduleName="currencies"/>
+
+</navigation>

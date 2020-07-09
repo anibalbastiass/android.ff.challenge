@@ -1,0 +1,67 @@
+apply plugin: 'com.android.dynamic-feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply from: './../../config/gradle/flavors.gradle'
+
+android {
+
+    dataBinding {
+        enabled = true
+    }
+
+    // option to use kotlin @Parselize annotation
+    androidExtensions {
+        experimental = true
+    }
+
+    // Android application UnitTest options.
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+
+    sourceSets {
+        getByName("test").java.srcDir("${project.rootDir}/app/build/generated/source/navigation-args/debug")
+
+        prod {
+            java.srcDir("src/prod/java")
+            res.srcDir("src/prod/res")
+        }
+        dev {
+            java.srcDir("src/dev/java")
+            res.srcDir("src/dev/res")
+        }
+        dummy {
+            java.srcDir("src/dummy/java")
+            res.srcDir("src/dummy/res")
+            assets.srcDirs = ['src/dummy/assets', 'src/dummy/assets/']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    lintOptions {
+        abortOnError = false
+    }
+}
