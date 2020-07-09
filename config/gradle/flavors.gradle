@@ -1,0 +1,42 @@
+android {
+    flavorDimensions "tier"
+    productFlavors {
+        prod {
+            resValue "string", "app_name", "FF Challenge"
+            dimension "tier"
+            resValue "string", "ff_endpoint", "${project.properties.GRADLE_API_BASE_URL}"
+        }
+        dev {
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+            resValue "string", "app_name", "FF Challenge Dev"
+            dimension "tier"
+            resValue "string", "ff_endpoint", "${project.properties.GRADLE_API_BASE_URL}"
+        }
+        dummy {
+            isDefault = true
+            applicationIdSuffix = ".dummy"
+            versionNameSuffix = "-dummy"
+            resValue "string", "app_name", "FF Challenge Dummy"
+            dimension "tier"
+            resValue "string", "ff_endpoint", "\"http://mock.api/\""
+        }
+    }
+
+    sourceSets {
+        getByName("test").java.srcDir("${project.rootDir}/app/build/generated/source/navigation-args/debug")
+        prod {
+            java.srcDir("src/prod/java")
+            res.srcDir("src/prod/res")
+        }
+        dev {
+            java.srcDir("src/dev/java")
+            res.srcDir("src/dev/res")
+        }
+        dummy {
+            java.srcDir("src/dummy/java")
+            res.srcDir("src/dummy/res")
+            assets.srcDirs = ['src/dummy/assets', 'src/dummy/assets/']
+        }
+    }
+}

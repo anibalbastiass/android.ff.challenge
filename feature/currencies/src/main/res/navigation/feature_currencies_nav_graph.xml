@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/currencyListFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/currencyListFragment"
+        android:name="com.ff.challenge.feature.currencies.ui.CurrencyListFragment"
+        android:label="CurrencyListFragment"
+        app:moduleName="currencies"
+        tools:layout="@layout/fragment_currency_list">
+
+    </fragment>
+
+
+
+</navigation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dotEnabled">#FFFFFF</color>
+    <color name="dotDisabled">#B2FFFFFF</color>
+    <color name="pi_white">#FFFFFF</color>
+</resources>
