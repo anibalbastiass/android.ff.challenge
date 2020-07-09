@@ -1,6 +1,9 @@
-# android.ff.challenge
+# FF Challenge
+[![Kotlin Version](https://img.shields.io/badge/Kotlin-1.3.72-blue.svg)](https://kotlinlang.org)
+[![AGP](https://img.shields.io/badge/AndroidStudio-4.0.0-blue?style=flat)](https://developer.android.com/studio/releases/gradle-plugin)
+[![Gradle](https://img.shields.io/badge/Gradle-5.6.4-blue?style=flat)](https://gradle.org)
 
-Technical test for Android Developer
+Technical test for Senior Android Developer
 
 ## Functional Features:
 1) Create a simple login, where the user must authenticate against a local database or SharedPreferences
@@ -33,7 +36,7 @@ Technical test for Android Developer
     * Retrofit
     * Android Jetpack
         * Navigation
-        * LiveData]
+        * LiveData
         * Lifecycle
         * ViewModel
         * Room
@@ -109,7 +112,7 @@ these operations is to create high-quality data source for the `domain` layer, n
 
 ## Ci pipeline
 
-These are all of the Gradle tasks (cmd commands) that are [executed by CI](/circle.yml):
+These are all of the Gradle tasks (cmd commands) that are [executed by CI](/.circleci/circle.yml):
 * `./gradlew lintDummyDebug` - runs Android lint
 * `./gradlew detekt` - runs detekt
 * `./gradlew ktlintCheck` - runs ktlint
