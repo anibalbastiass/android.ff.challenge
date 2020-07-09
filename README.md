@@ -3,13 +3,14 @@
 [![Kotlin Version](https://img.shields.io/badge/Kotlin-1.3.72-blue.svg)](https://kotlinlang.org)
 [![AGP](https://img.shields.io/badge/AndroidStudio-4.0.0-blue?style=flat)](https://developer.android.com/studio/releases/gradle-plugin)
 [![Gradle](https://img.shields.io/badge/Gradle-5.6.4-blue?style=flat)](https://gradle.org)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d4dfba773487436ab80afc60e5754c5b)](https://app.codacy.com/manual/anibalbastiass/android.ff.challenge?utm_source=github.com&utm_medium=referral&utm_content=anibalbastiass/android.ff.challenge&utm_campaign=Badge_Grade_Dashboard)
 
 Technical test for Senior Android Developer
 
 ## Functional Features:
 1) Create a simple login, where the user must authenticate against a local database or SharedPreferences
 2) The stored data must be encrypted with some encryption algorithm such as AES256
-3) When making a valid login, it must direct a view that contains the title "hello <username>" and that shows a list of data from the following API: https: // www. mindicador.cl/api
+3) When making a valid login, it must direct a view that contains the title "hello <username>" and that shows a list of data from the following API: https://www.mindicador.cl/api
 4) Invalid login must be validated
 5) The listing should only show the attributes "name" and "value"
 6) The view that contains the listing must contain a search filter that works by "code"
