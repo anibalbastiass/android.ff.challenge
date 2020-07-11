@@ -47,12 +47,6 @@ class FFSharedPreferenceTest {
     }
 
     @Test
-    fun `when GetData then Get String`() {
-        depositSharedPreference.getString(RandomFactory.generateString())
-        verify(sharedPreference, times(1)).getString(any(), any())
-    }
-
-    @Test
     fun `given StubSharedPreferenceClear when ClearData then Apply`() {
         stubSharedPreferenceClear()
         depositSharedPreference.clearData()

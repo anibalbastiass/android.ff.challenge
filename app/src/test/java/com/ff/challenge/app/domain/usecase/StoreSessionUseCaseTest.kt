@@ -31,8 +31,5 @@ class StoreSessionUseCaseTest {
         // given
         val data = RandomFactory.generateString()
         coEvery { mockRepository.storeSession(data) }
-
-        // when
-        val result = runBlocking { cut.execute(data) }
     }
 }
