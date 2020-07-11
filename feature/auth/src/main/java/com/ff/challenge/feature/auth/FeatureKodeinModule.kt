@@ -1,6 +1,6 @@
 package com.ff.challenge.feature.auth
 
-import com.ff.challenge.app.feature.KodeinModuleProvider
+import com.ff.challenge.app.di.feature.KodeinModuleProvider
 import com.ff.challenge.feature.auth.data.dataModule
 import com.ff.challenge.feature.auth.domain.domainModule
 import com.ff.challenge.feature.auth.presentation.presentationModule

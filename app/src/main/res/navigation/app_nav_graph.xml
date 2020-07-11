@@ -4,14 +4,40 @@
     android:id="@+id/app_navigation_graph"
     app:startDestination="@id/featureAuthNavGraph">
 
+    <action
+        android:id="@+id/action_navigateToAuthNavGraph"
+        app:destination="@id/featureAuthNavGraph"
+        app:enterAnim="@anim/fade_in_fragment"
+        app:exitAnim="@anim/fade_out_fragment"
+        app:popEnterAnim="@anim/fade_in_fragment"
+        app:popExitAnim="@anim/fade_out_fragment" />
+
+    <action
+        android:id="@+id/action_navigateToCurrenciesNavGraph"
+        app:destination="@id/featureCurrenciesNavGraph"
+        app:enterAnim="@anim/fade_in_fragment"
+        app:exitAnim="@anim/fade_out_fragment"
+        app:popEnterAnim="@anim/fade_in_fragment"
+        app:popExitAnim="@anim/fade_out_fragment" />
+
     <include-dynamic
         android:id="@+id/featureAuthNavGraph"
         app:graphResName="feature_auth_nav_graph"
-        app:moduleName="auth"/>
+        app:moduleName="auth" />
 
     <include-dynamic
         android:id="@+id/featureCurrenciesNavGraph"
         app:graphResName="feature_currencies_nav_graph"
-        app:moduleName="currencies"/>
+        app:moduleName="currencies">
+
+        <argument
+            android:name="email"
+            app:argType="string" />
+
+        <argument
+            android:name="fullName"
+            app:argType="string" />
+
+    </include-dynamic>
 
 </navigation>

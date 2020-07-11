@@ -22,7 +22,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
 
-        <activity android:name="com.ff.challenge.app.presentation.NavHostActivity">
+        <activity android:name="com.ff.challenge.app.ui.NavHostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
