@@ -29,6 +29,8 @@ android {
         testInstrumentationRunner = AndroidConfig.TEST_INSTRUMENTATION_RUNNER
 
         buildConfigFieldFromGradleProperty("apiBaseUrl")
+        buildConfigFieldFromGradleProperty("secretKey")
+        buildConfigFieldFromGradleProperty("saltKey")
 
         buildConfigField("FEATURE_MODULE_NAMES", getDynamicFeatureModuleNames())
     }

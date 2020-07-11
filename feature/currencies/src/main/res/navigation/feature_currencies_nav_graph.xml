@@ -12,6 +12,14 @@
         app:moduleName="currencies"
         tools:layout="@layout/fragment_currency_list">
 
+        <argument
+            android:name="email"
+            app:argType="string" />
+
+        <argument
+            android:name="fullName"
+            app:argType="string" />
+
     </fragment>
 
 

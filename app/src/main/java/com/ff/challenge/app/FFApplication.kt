@@ -1,5 +1,6 @@
 package com.ff.challenge.app
 
+import android.content.Context
 import com.google.android.play.core.splitcompat.SplitCompatApplication
 import com.ff.challenge.BuildConfig
 import com.ff.challenge.app.feature.FeatureManager
@@ -13,6 +14,10 @@ import timber.log.Timber
 
 class FFApplication : SplitCompatApplication(), KodeinAware {
 
+    companion object {
+        lateinit var appContext: Context
+    }
+
     override val kodein = Kodein.lazy {
         import(androidXModule(this@FFApplication))
         import(baseModule)
@@ -24,6 +29,7 @@ class FFApplication : SplitCompatApplication(), KodeinAware {
 
     override fun onCreate() {
         super.onCreate()
+        appContext = this
         initTimber()
     }
 

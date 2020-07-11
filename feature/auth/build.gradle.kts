@@ -5,6 +5,7 @@ plugins {
     id(GradlePluginId.SAFE_ARGS)
     id(GradlePluginId.JACOCO_ID)
     kotlin(GradlePluginId.KAPT)
+    id("kotlin-android")
 }
 
 apply(from = "./../../config/gradle/jacoco.gradle")
@@ -29,6 +30,11 @@ kapt {
 
 dependencies {
     implementation(project(ModuleDependency.APP))
+    implementation("androidx.appcompat:appcompat:1.1.0")
+    implementation("com.google.android.material:material:1.1.0")
+    implementation("androidx.annotation:annotation:1.1.0")
+    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     kapt(LibraryDependency.ROOM_COMPILER)
 
     addTestDependencies()
