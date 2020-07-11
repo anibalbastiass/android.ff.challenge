@@ -1,6 +1,7 @@
 package com.ff.challenge.feature.auth.presentation
 
 import androidx.fragment.app.Fragment
+import com.ff.challenge.app.presentation.viewmodel.CacheViewModel
 import com.ff.challenge.feature.auth.MODULE_NAME
 import com.ff.challenge.feature.auth.presentation.mapper.UiUserMapper
 import com.ff.challenge.feature.auth.presentation.viewmodel.SignInViewModel
@@ -17,6 +18,16 @@ internal val presentationModule = Kodein.Module("${MODULE_NAME}PresentationModul
     bind<SignInViewModel>() with scoped<Fragment>(AndroidLifecycleScope).singleton {
         KotlinViewModelProvider.of(context) {
             SignInViewModel(
+                instance(),
+                instance()
+            )
+        }
+    }
+
+    bind<CacheViewModel>() with scoped<Fragment>(AndroidLifecycleScope).singleton {
+        KotlinViewModelProvider.of(context) {
+            CacheViewModel(
+                instance(),
                 instance(),
                 instance()
             )

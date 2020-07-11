@@ -1,6 +1,6 @@
 package com.ff.challenge.feature.currencies
 
-import com.ff.challenge.app.feature.KodeinModuleProvider
+import com.ff.challenge.app.di.feature.KodeinModuleProvider
 import com.ff.challenge.feature.currencies.data.dataModule
 import com.ff.challenge.feature.currencies.domain.domainModule
 import com.ff.challenge.feature.currencies.presentation.presentationModule

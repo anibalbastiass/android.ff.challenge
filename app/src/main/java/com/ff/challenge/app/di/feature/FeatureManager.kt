@@ -1,10 +1,7 @@
-package com.ff.challenge.app.feature
+package com.ff.challenge.app.di.feature
 
 import com.ff.challenge.BuildConfig
 
-// Dynamic Feature modules require reversed dependency (dynamic feature module depends on app module)
-// This means we have to use reflection to access module content
-// See: https://medium.com/mindorks/dynamic-feature-modules-the-future-4bee124c0f1
 @Suppress("detekt.UnsafeCast")
 object FeatureManager {
 

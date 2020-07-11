@@ -3,8 +3,8 @@ package com.ff.challenge.app
 import android.content.Context
 import com.google.android.play.core.splitcompat.SplitCompatApplication
 import com.ff.challenge.BuildConfig
-import com.ff.challenge.app.feature.FeatureManager
-import com.ff.challenge.app.kodein.FragmentArgsExternalSource
+import com.ff.challenge.app.di.feature.FeatureManager
+import com.ff.challenge.app.di.kodein.FragmentArgsExternalSource
 import com.ff.challenge.appModule
 import com.ff.challenge.library.base.baseModule
 import org.kodein.di.Kodein

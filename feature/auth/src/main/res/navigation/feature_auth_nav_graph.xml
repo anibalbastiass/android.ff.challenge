@@ -17,10 +17,9 @@
             app:destination="@id/featureCurrenciesNavGraph"
             app:enterAnim="@anim/fade_in_fragment"
             app:exitAnim="@anim/fade_out_fragment"
-            app:launchSingleTop="true"
             app:popEnterAnim="@anim/fade_in_fragment"
             app:popExitAnim="@anim/fade_out_fragment"
-            app:popUpTo="@+id/main_nav_graph"
+            app:popUpTo="@+id/signInFragment"
             app:popUpToInclusive="true" />
 
     </fragment>

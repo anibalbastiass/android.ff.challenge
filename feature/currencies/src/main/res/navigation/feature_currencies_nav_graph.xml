@@ -20,8 +20,21 @@
             android:name="fullName"
             app:argType="string" />
 
+        <action
+            android:id="@+id/action_navigateToAuthNavGraph"
+            app:destination="@id/featureAuthNavGraph"
+            app:enterAnim="@anim/fade_in_fragment"
+            app:exitAnim="@anim/fade_out_fragment"
+            app:popEnterAnim="@anim/fade_in_fragment"
+            app:popExitAnim="@anim/fade_out_fragment"
+            app:popUpTo="@+id/currencyListFragment"
+            app:popUpToInclusive="true" />
+
     </fragment>
 
-
+    <include-dynamic
+        android:id="@+id/featureAuthNavGraph"
+        app:graphResName="feature_auth_nav_graph"
+        app:moduleName="auth" />
 
 </navigation>

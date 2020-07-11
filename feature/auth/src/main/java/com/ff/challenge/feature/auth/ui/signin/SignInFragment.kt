@@ -7,6 +7,8 @@ import android.view.inputmethod.EditorInfo
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
+import com.ff.challenge.app.presentation.viewmodel.CacheViewModel
+import com.ff.challenge.app.presentation.viewstate.CacheViewState
 import com.ff.challenge.feature.auth.AuthNavigator
 import com.ff.challenge.feature.auth.R
 import com.ff.challenge.feature.auth.databinding.FragmentSignInBinding
@@ -25,8 +27,12 @@ class SignInFragment : BaseContainerFragment() {
     override val layoutResourceId: Int = R.layout.fragment_sign_in
     private lateinit var binding: FragmentSignInBinding
     private val viewModel: SignInViewModel by instance()
+    private val cacheViewModel: CacheViewModel by instance()
     private val navigator: AuthNavigator by instance()
     private val connectionManager: ConnectivityManager by instance()
+
+    private var mEmail: String = ""
+    private var mFullName: String = ""
 
     private val stateObserver = Observer<SignInViewState> { viewState ->
         when (viewState) {
@@ -37,7 +43,9 @@ class SignInFragment : BaseContainerFragment() {
                 binding.progressBar.visible = false
 
                 viewState.user.apply {
-                    navigator.navigateToCurrencies(email, fullName)
+                    mEmail = email
+                    mFullName = fullName
+                    cacheViewModel.storeSession("$email\n$password")
                 }
             }
             SignInViewState.NotUserFound -> {
@@ -58,6 +66,17 @@ class SignInFragment : BaseContainerFragment() {
         }
     }
 
+    private val stateCacheObserver = Observer<CacheViewState> { viewState ->
+        when (viewState) {
+            CacheViewState.StoreSessionSuccess -> {
+                navigator.navigateToCurrencies(mEmail, mFullName)
+            }
+            CacheViewState.StoreSessionFailure -> {
+                activity?.toast(R.string.login_failed)
+            }
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -65,6 +84,7 @@ class SignInFragment : BaseContainerFragment() {
         binding.lifecycleOwner = this
 
         observe(viewModel.stateLiveData, stateObserver)
+        observe(cacheViewModel.stateLiveData, stateCacheObserver)
 
         binding.apply {
             with(WidgetExtension) {

@@ -1,4 +1,4 @@
-package com.ff.challenge.app.feature
+package com.ff.challenge.app.di.feature
 
 import org.kodein.di.Kodein
 
