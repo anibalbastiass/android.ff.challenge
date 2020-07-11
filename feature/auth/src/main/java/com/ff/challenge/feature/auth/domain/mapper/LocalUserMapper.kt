@@ -11,12 +11,4 @@ class LocalUserMapper {
         email = email,
         password = password
     )
-
-    fun DomainUser.fromDomainToLocal() = EntityUser(
-        userId = userId,
-        fullName = fullName,
-        email = email,
-        password = password
-    )
-
 }

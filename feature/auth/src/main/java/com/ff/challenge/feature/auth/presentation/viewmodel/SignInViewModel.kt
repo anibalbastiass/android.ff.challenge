@@ -43,7 +43,6 @@ internal class SignInViewModel(
         viewModelScope.launch {
             try {
                 useCase.execute(email, encryptedPassword)?.also {
-                    delay(1000L)
                     sendAction(
                         SignInAction.SignInSuccess(
                             it
@@ -51,7 +50,6 @@ internal class SignInViewModel(
                     )
                 }
             } catch (e: Exception) {
-                delay(1000L)
                 postErrorAction()
             }
         }

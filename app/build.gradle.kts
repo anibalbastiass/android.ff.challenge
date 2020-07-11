@@ -76,6 +76,8 @@ dependencies {
     api(LibraryDependency.ROOM_RUNTIME)
     api(LibraryDependency.ROOM_KTX)
     kapt(LibraryDependency.ROOM_COMPILER)
+
+    addTestDependencies()
 }
 
 repositories {
