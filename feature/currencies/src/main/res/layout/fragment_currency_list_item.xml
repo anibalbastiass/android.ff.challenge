@@ -10,6 +10,10 @@
             name="item"
             type="com.ff.challenge.feature.currencies.presentation.model.UiCurrencyItem" />
 
+        <variable
+            name="onClickAction"
+            type="com.ff.challenge.feature.currencies.ui.list.adapter.CurrencyListAdapter.ClickListener" />
+
     </data>
 
     <androidx.cardview.widget.CardView
@@ -19,7 +23,7 @@
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
-        android:onClick="@{() -> item.onClickAction.invoke(item)}"
+        android:onClick="@{() -> onClickAction.onClickAction(item)}"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/dp_5"
         app:cardElevation="@dimen/dp_5"

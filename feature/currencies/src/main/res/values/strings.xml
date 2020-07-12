@@ -3,4 +3,8 @@
     <string name="sign_out">Sign Out</string>
     <string name="hello_user">Hello %s</string>
     <string name="error_connection_internet">Error connection, try again.</string>
+    <string name="value">Valor</string>
+    <string name="code">Código</string>
+    <string name="currency">Unidad Medida</string>
+    <string name="date">Fecha</string>
 </resources>

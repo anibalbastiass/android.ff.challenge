@@ -13,6 +13,10 @@ class CurrenciesNavigator(private val navManager: NavManager) {
     }
 
     fun navigateToDetails(currency: UiCurrencyItem) {
-
+        navManager.navigate(
+            CurrencyListFragmentDirections.actionCurrencyListFragmentToCurrencyDetailsFragment(
+                currency
+            )
+        )
     }
 }

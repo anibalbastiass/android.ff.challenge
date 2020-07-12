@@ -14,12 +14,12 @@ import com.ff.challenge.app.presentation.viewstate.CacheViewState
 import com.ff.challenge.feature.currencies.CurrenciesNavigator
 import com.ff.challenge.feature.currencies.R
 import com.ff.challenge.feature.currencies.databinding.FragmentCurrencyListBinding
+import com.ff.challenge.feature.currencies.presentation.model.UiCurrencies
 import com.ff.challenge.feature.currencies.presentation.model.UiCurrencyItem
 import com.ff.challenge.feature.currencies.presentation.viewmodel.CurrencyListViewModel
 import com.ff.challenge.feature.currencies.presentation.viewstate.CurrencyListViewState
 import com.ff.challenge.feature.currencies.ui.list.adapter.CurrencyListAdapter
 import com.ff.challenge.library.base.presentation.extension.RecyclerViewExtension
-import com.ff.challenge.library.base.presentation.extension.RecyclerViewExtension.runLayoutAnimation
 import com.ff.challenge.library.base.presentation.extension.ToolbarExtension
 import com.ff.challenge.library.base.presentation.extension.isNetworkAvailable
 import com.ff.challenge.library.base.presentation.extension.observe
@@ -50,22 +50,7 @@ class CurrencyListFragment : BaseContainerFragment() {
     private val stateObserver = Observer<CurrencyListViewState> { viewState ->
         when (viewState) {
             is CurrencyListViewState.CurrencyListSuccess -> {
-                binding.progressBar.visible = false
-                binding.rvCurrencies.visible = true
-
-                with(viewState.currencies) {
-                    binding.footer = "$author ($version) - $date"
-                }
-
-                currencyAdapter.items =
-                    viewState.currencies.currencies as MutableList<UiCurrencyItem>
-                with(RecyclerViewExtension) { binding.rvCurrencies.runLayoutAnimation() }
-
-                viewState.currencies.currencies.map { item ->
-                    item.onClickAction = { selectedItem ->
-                        navigator.navigateToDetails(selectedItem)
-                    }
-                }
+                setCurrencyData(viewState.currencies)
             }
             CurrencyListViewState.CurrencyListFailure -> {
                 binding.progressBar.visible = false
@@ -87,7 +72,31 @@ class CurrencyListFragment : BaseContainerFragment() {
         }
         setToolbar()
         binding.rvCurrencies.setCurrenciesAdapter()
-        loadData()
+
+        (currenciesViewModel.stateLiveData.value as? CurrencyListViewState.CurrencyListSuccess)
+            ?.currencies?.let {
+                binding.progressBar.visible = false
+                setCurrencyData(it)
+            } ?: run {
+            requestSecureData()
+        }
+    }
+
+    private fun setCurrencyData(currencies: UiCurrencies) {
+        binding.progressBar.visible = false
+        binding.rvCurrencies.visible = true
+
+        with(currencies) {
+            binding.footer = "$author ($version) - $date"
+        }
+
+        currencyAdapter.onClickAction = object : CurrencyListAdapter.ClickListener {
+            override fun onClickAction(item: UiCurrencyItem) {
+                navigator.navigateToDetails(item)
+            }
+        }
+
+        currencyAdapter.items = currencies.currencies as MutableList<UiCurrencyItem>
     }
 
     private fun RecyclerView.setCurrenciesAdapter() {
@@ -95,7 +104,7 @@ class CurrencyListFragment : BaseContainerFragment() {
         adapter = currencyAdapter
     }
 
-    private fun loadData() {
+    private fun requestSecureData() {
         if (connectionManager.isNetworkAvailable()) {
             currenciesViewModel.loadData()
         } else {

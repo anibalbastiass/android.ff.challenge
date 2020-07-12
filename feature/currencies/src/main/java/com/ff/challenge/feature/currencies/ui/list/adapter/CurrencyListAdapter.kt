@@ -9,6 +9,7 @@ import com.ff.challenge.feature.currencies.presentation.model.UiCurrencyItem
 class CurrencyListAdapter : RecyclerView.Adapter<CurrencyListAdapter.ViewHolder>() {
 
     lateinit var items: MutableList<UiCurrencyItem>
+    lateinit var onClickAction: ClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -23,7 +24,12 @@ class CurrencyListAdapter : RecyclerView.Adapter<CurrencyListAdapter.ViewHolder>
     inner class ViewHolder(private val binding: FragmentCurrencyListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: UiCurrencyItem) {
+            binding.onClickAction = onClickAction
             binding.item = item
         }
+    }
+
+    interface ClickListener {
+        fun onClickAction(item: UiCurrencyItem)
     }
 }

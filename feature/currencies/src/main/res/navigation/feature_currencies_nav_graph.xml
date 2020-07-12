@@ -30,6 +30,27 @@
             app:popUpTo="@+id/currencyListFragment"
             app:popUpToInclusive="true" />
 
+        <action
+            android:id="@+id/action_currencyListFragment_to_currencyDetailsFragment"
+            app:destination="@id/currencyDetailsFragment"
+            app:enterAnim="@anim/fade_in_fragment"
+            app:exitAnim="@anim/fade_out_fragment"
+            app:popEnterAnim="@anim/fade_in_fragment"
+            app:popExitAnim="@anim/fade_out_fragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/currencyDetailsFragment"
+        android:name="com.ff.challenge.feature.currencies.ui.detail.CurrencyDetailsFragment"
+        android:label="CurrencyDetailsFragment"
+        app:moduleName="currencies"
+        tools:layout="@layout/fragment_currency_details">
+
+        <argument
+            android:name="item"
+            app:argType="com.ff.challenge.feature.currencies.presentation.model.UiCurrencyItem" />
+
     </fragment>
 
     <include-dynamic
