@@ -1,5 +1,11 @@
 package com.ff.challenge.library.base.presentation.extension
 
-fun Int.applyMilesSeparator(): String {
-    return String.format("%,d", this)
+import java.math.RoundingMode
+import java.text.DecimalFormat
+
+fun Double.applyMilesSeparator(): String {
+    val df = DecimalFormat("#,###.##")
+    df.toLocalizedPattern()
+    df.roundingMode = RoundingMode.CEILING
+    return df.format(this)
 }

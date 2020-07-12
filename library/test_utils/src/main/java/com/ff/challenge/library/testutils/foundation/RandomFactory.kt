@@ -1,8 +1,9 @@
 package com.ff.challenge.library.testutils.foundation
 
 import android.text.SpannableString
-import java.util.Random
-import java.util.UUID
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 import java.util.concurrent.ThreadLocalRandom
 
 object RandomFactory {
@@ -38,4 +39,9 @@ object RandomFactory {
     private fun generateStringWithoutDash() = generateString().replace("-", "")
     private fun generateStringWithoutDashAndSubSequence(start: Int, end: Int) =
         generateStringWithoutDash().subSequence(start, end)
+
+    fun generateDate(): String {
+        val format: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+        return format.format(Date())
+    }
 }

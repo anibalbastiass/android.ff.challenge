@@ -11,5 +11,5 @@ sealed class CacheViewState : BaseViewState {
     object StoreSessionFailure : CacheViewState()
 
     object SignOutSuccess : CacheViewState()
-    object SignOuFailure : CacheViewState()
+    object SignOutFailure : CacheViewState()
 }

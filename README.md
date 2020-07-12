@@ -30,6 +30,22 @@ Technical test for Senior Android Developer
 8) The development of the app must be with Android Jetpack
 9) The app must support from API 21 to 28
 
+## Demo (GIF)
+
+<img src="misc/application_anim.gif" width="336" align="right" hspace="20">
+
+## Data Test
+
+    * Email: user1@ff.com / Password: asasdasd
+    * Email: user2@ff.com / Password: asasdasd
+    * Email: user3@ff.com / Password: asasdasd
+    
+## Flavors Environments
+
+This project contains 3 environments: dummy, dev and prod. Dummy flavor point to a local Json with the same
+payload from dev/prod endpoint. Otherwise, dev and prod point to remote api rest. Note: Recommend test these
+environments pointing app, currencies and auth into same flavor.
+
 ## Technical Specs
 
     * Tech-stack
@@ -127,6 +143,18 @@ These are all of the Gradle tasks (cmd commands) that are [executed by CI](/.cir
 
 On top of that project contains a custom `./gradlew staticCheck` task that mimics all CI tasks and is intended to run on
 a local computer.
+
+## Test Coverage
+
+### App orchestrator module
+
+![app_module](https://github.com/anibalbastiass/android.ff.challenge/blob/develop/misc/app_coverage.png?raw=true)
+
+### Auth dynamic module
+![auth_module](https://github.com/anibalbastiass/android.ff.challenge/blob/develop/misc/auth_coverage.png?raw=true)
+
+### Currencies dynamic module
+![currencies_module](https://github.com/anibalbastiass/android.ff.challenge/blob/develop/misc/currencies_coverage.png?raw=true)
 
 ## Getting started
 

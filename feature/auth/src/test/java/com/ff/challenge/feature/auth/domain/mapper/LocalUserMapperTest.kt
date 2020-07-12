@@ -1,7 +1,9 @@
 package com.ff.challenge.feature.auth.domain.mapper
 
+import com.ff.challenge.feature.auth.domain.model.DomainUser
 import com.ff.challenge.feature.auth.factory.UserFactory
 import junit.framework.Assert.assertEquals
+import org.amshove.kluent.shouldBeEqualTo
 import org.junit.Test
 
 class LocalUserMapperTest {
@@ -17,5 +19,12 @@ class LocalUserMapperTest {
         assertEquals("fullName", entity.fullName, domain.fullName)
         assertEquals("email", entity.email, domain.email)
         assertEquals("password", entity.password, domain.password)
+
+        domain shouldBeEqualTo DomainUser(
+            domain.userId,
+            domain.fullName,
+            domain.email,
+            domain.password
+        )
     }
 }

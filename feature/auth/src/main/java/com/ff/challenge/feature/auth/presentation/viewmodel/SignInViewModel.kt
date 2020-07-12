@@ -10,7 +10,6 @@ import com.ff.challenge.feature.auth.presentation.mapper.UiUserMapper
 import com.ff.challenge.feature.auth.presentation.viewstate.SignInViewState
 import com.ff.challenge.library.base.presentation.extension.EncryptExtension
 import com.ff.challenge.library.base.presentation.viewmodel.BaseViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 internal class SignInViewModel(
@@ -69,7 +68,7 @@ internal class SignInViewModel(
         }
     }
 
-    private fun isUserNameValid(username: String): Boolean {
+    fun isUserNameValid(username: String): Boolean {
         return if (username.contains("@")) {
             Patterns.EMAIL_ADDRESS.matcher(username).matches()
         } else {
