@@ -8,4 +8,5 @@
     <string name="currency">Unidad Medida</string>
     <string name="date">Fecha</string>
     <string name="search">Buscar</string>
+    <string name="try_again">Intenta nuevamente</string>
 </resources>

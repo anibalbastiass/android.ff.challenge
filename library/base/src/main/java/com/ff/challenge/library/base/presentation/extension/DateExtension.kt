@@ -28,10 +28,3 @@ fun String.formatDate(): String {
     }
     return formattedDate
 }
-
-fun Int.minutesToHours(): String {
-    val time = this
-    val hours: Int = time / 60
-    val minutes: Int = time % 60
-    return String.format("%d hr %d mins", hours, minutes)
-}
