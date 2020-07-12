@@ -1,0 +1,9 @@
+<resources>
+    <!--Dynamic module titles-->
+    <string name="feature_auth">feature auth</string>
+    <string name="feature_currencies">feature currencies</string>
+
+    <!--Bottom menu-->
+    <string name="auth">Auth</string>
+    <string name="currencies">Currencies</string>
+</resources>

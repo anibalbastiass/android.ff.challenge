@@ -1,0 +1,45 @@
+apply from: './../config/gradle/flavors.gradle'
+
+android {
+
+    dataBinding {
+        enabled = true
+    }
+
+    // option to use kotlin @Parselize annotation
+    androidExtensions {
+        experimental = true
+    }
+
+    // Android application UnitTest options.
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    lintOptions {
+        abortOnError = false
+    }
+}

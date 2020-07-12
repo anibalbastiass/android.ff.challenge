@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.ff.challenge.feature.currencies.presentation.model.UiCurrencyItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/backgroundColor">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbCurrencies"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+            app:theme="@style/ToolBarDetailsStyle"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/colorPrimary"
+            tools:title="@string/app_name" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:padding="@dimen/dp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbCurrencies">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:padding="@dimen/dp_10">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@{item.name}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Dolar" />
+
+                <TextView
+                    android:id="@+id/tvValueLabel"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:padding="@dimen/dp_5"
+                    android:text="@string/value"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvName"
+                    tools:text="Valor" />
+
+                <TextView
+                    android:id="@+id/tvValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:fontFamily="@font/opensans_regular"
+                    android:padding="@dimen/dp_5"
+                    android:text="@{item.value}"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvValueLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/tvName"
+                    tools:text="400 Pesos" />
+
+                <TextView
+                    android:id="@+id/tvCodeLabel"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:padding="@dimen/dp_5"
+                    android:text="@string/code"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvValueLabel"
+                    tools:text="Codigo" />
+
+                <TextView
+                    android:id="@+id/tvCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:padding="@dimen/dp_5"
+                    android:text="@{item.code}"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvCodeLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/tvValue"
+                    tools:text="400 Pesos" />
+
+                <TextView
+                    android:id="@+id/tvCurrencyLabel"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:padding="@dimen/dp_5"
+                    android:text="@string/currency"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCodeLabel"
+                    tools:text="Unidad Medida" />
+
+                <TextView
+                    android:id="@+id/tvCurrency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:padding="@dimen/dp_5"
+                    android:text="@{item.currency}"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvCurrencyLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCode"
+                    tools:text="400 Pesos" />
+
+                <TextView
+                    android:id="@+id/tvDateLabel"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:padding="@dimen/dp_5"
+                    android:text="@string/date"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCurrencyLabel"
+                    tools:text="Fecha" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_regular"
+                    android:padding="@dimen/dp_5"
+                    android:text="@{item.date}"
+                    android:textColor="@color/text_primary_color"
+                    android:textSize="@dimen/sp_13"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvDateLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCurrencyLabel"
+                    tools:text="400 Pesos" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

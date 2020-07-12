@@ -1,0 +1,89 @@
+{
+  "version": "1.6.0",
+  "autor": "mindicador.cl",
+  "fecha": "2020-07-09T11:00:00.000Z",
+  "uf": {
+    "codigo": "uf",
+    "nombre": "Unidad de fomento (UF)",
+    "unidad_medida": "Pesos",
+    "fecha": "2020-07-09T04:00:00.000Z",
+    "valor": 28687.8
+  },
+  "ivp": {
+    "codigo": "ivp",
+    "nombre": "Indice de valor promedio (IVP)",
+    "unidad_medida": "Pesos",
+    "fecha": "2020-07-09T04:00:00.000Z",
+    "valor": 29961.9
+  },
+  "dolar": {
+    "codigo": "dolar",
+    "nombre": "Dólar observado",
+    "unidad_medida": "Pesos",
+    "fecha": "2020-07-09T04:00:00.000Z",
+    "valor": 786.18
+  },
+  "dolar_intercambio": {
+    "codigo": "dolar_intercambio",
+    "nombre": "Dólar acuerdo",
+    "unidad_medida": "Pesos",
+    "fecha": "2014-11-13T03:00:00.000Z",
+    "valor": 758.87
+  },
+  "euro": {
+    "codigo": "euro",
+    "nombre": "Euro",
+    "unidad_medida": "Pesos",
+    "fecha": "2020-07-09T04:00:00.000Z",
+    "valor": 891.16
+  },
+  "ipc": {
+    "codigo": "ipc",
+    "nombre": "Indice de Precios al Consumidor (IPC)",
+    "unidad_medida": "Porcentaje",
+    "fecha": "2020-06-01T04:00:00.000Z",
+    "valor": -0.1
+  },
+  "utm": {
+    "codigo": "utm",
+    "nombre": "Unidad Tributaria Mensual (UTM)",
+    "unidad_medida": "Pesos",
+    "fecha": "2020-07-01T04:00:00.000Z",
+    "valor": 50322
+  },
+  "imacec": {
+    "codigo": "imacec",
+    "nombre": "Imacec",
+    "unidad_medida": "Porcentaje",
+    "fecha": "2020-05-01T04:00:00.000Z",
+    "valor": -15.3
+  },
+  "tpm": {
+    "codigo": "tpm",
+    "nombre": "Tasa Política Monetaria (TPM)",
+    "unidad_medida": "Porcentaje",
+    "fecha": "2020-07-09T04:00:00.000Z",
+    "valor": 0.5
+  },
+  "libra_cobre": {
+    "codigo": "libra_cobre",
+    "nombre": "Libra de Cobre",
+    "unidad_medida": "Dólar",
+    "fecha": "2020-07-09T04:00:00.000Z",
+    "valor": 2.81
+  },
+  "tasa_desempleo": {
+    "codigo": "tasa_desempleo",
+    "nombre": "Tasa de desempleo",
+    "unidad_medida": "Porcentaje",
+    "fecha": "2020-05-01T04:00:00.000Z",
+    "valor": 11.21
+  },
+  "bitcoin": {
+    "codigo": "bitcoin",
+    "nombre": "Bitcoin",
+    "unidad_medida": "Dólar",
+    "fecha": "2020-07-06T04:00:00.000Z",
+    "valor": 9348.91
+  }
+}
