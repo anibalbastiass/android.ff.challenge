@@ -45,7 +45,7 @@ class SignInFragment : BaseContainerFragment() {
                 viewState.user.apply {
                     mEmail = email
                     mFullName = fullName
-                    cacheViewModel.storeSession("$email\n$password")
+                    cacheViewModel.storeSession("$email\n$fullName")
                 }
             }
             SignInViewState.NotUserFound -> {

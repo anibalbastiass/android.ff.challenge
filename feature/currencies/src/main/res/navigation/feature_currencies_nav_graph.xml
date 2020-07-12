@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/currencyListFragment"
-        android:name="com.ff.challenge.feature.currencies.ui.CurrencyListFragment"
+        android:name="com.ff.challenge.feature.currencies.ui.list.CurrencyListFragment"
         android:label="CurrencyListFragment"
         app:moduleName="currencies"
         tools:layout="@layout/fragment_currency_list">

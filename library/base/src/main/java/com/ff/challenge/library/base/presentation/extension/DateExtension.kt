@@ -1,22 +1,16 @@
 package com.ff.challenge.library.base.presentation.extension
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import java.text.ParseException
 import java.text.SimpleDateFormat
-import java.time.DateTimeException
-import java.util.Date
-import java.util.Locale
-import java.util.TimeZone
+import java.util.*
 
-private const val DD_MM_YYYY_FORMAT = "yyyy-MM-dd"
-private const val MMM_DD_YYYY_FORMAT = "MMM dd, yyyy"
+private const val YYYY_MM_DD_T_HH_MM_SS_SSS_Z = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+private const val MMM_DD_YYYY_FORMAT = "dd MMM, yyyy"
 
-@RequiresApi(Build.VERSION_CODES.O)
 fun String.formatDate(): String {
     var formattedDate = ""
     try {
-        var format = SimpleDateFormat(DD_MM_YYYY_FORMAT, Locale.ENGLISH)
+        var format = SimpleDateFormat(YYYY_MM_DD_T_HH_MM_SS_SSS_Z, Locale.getDefault())
         format.timeZone = TimeZone.getTimeZone("UTC")
         var newDate: Date? = null
         try {
@@ -25,12 +19,10 @@ fun String.formatDate(): String {
             e.printStackTrace()
         }
 
-        format = SimpleDateFormat(MMM_DD_YYYY_FORMAT, Locale.ENGLISH)
+        format = SimpleDateFormat(MMM_DD_YYYY_FORMAT, Locale.getDefault())
         format.timeZone = TimeZone.getDefault()
 
         formattedDate = format.format(newDate)
-    } catch (e: DateTimeException) {
-        e.printStackTrace()
     } catch (e: Exception) {
         e.printStackTrace()
     }

@@ -14,4 +14,34 @@
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
     </style>
 
+    <style name="ToolBarDetailsStyle" parent="Theme.AppCompat">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColorPrimary">@color/text_primary_color</item>
+        <item name="android:textColorSecondary">@color/text_primary_color</item>
+        <item name="actionMenuTextColor">@color/text_primary_color</item>
+        <item name="colorControlHighlight">@color/light_screen_dark</item>
+        <item name="actionButtonStyle">@style/AppTheme.Widget.ActionButton</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+
+        <!-- ActionMode -->
+        <item name="actionModeBackground">@color/white</item>
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="actionModeCloseButtonStyle">@style/closeButtonActionMode</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="AppTheme.Widget.ActionButton" parent="@style/Widget.AppCompat.ActionButton">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="closeButtonActionMode" parent="Widget.AppCompat.Light.ActionButton.CloseMode">
+        <item name="android:tint">@color/colorPrimary</item>
+    </style>
+
+    <style name="ToolbarDetails" parent="ToolBarDetailsStyle">
+        <item name="android:tint">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+    </style>
+
 </resources>

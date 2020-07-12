@@ -1,8 +1,5 @@
 package com.ff.challenge
 
-import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.ff.challenge.app.data.cache.FFSharedPreference
 import com.ff.challenge.app.data.cache.FFSharedPreferenceFactory

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="sign_out">Cerrar Sesión</string>
+    <string name="hello_user">Hola %s</string>
+    <string name="error_connection_internet">Error en la conexión, intente nuevamente.</string>
 </resources>
