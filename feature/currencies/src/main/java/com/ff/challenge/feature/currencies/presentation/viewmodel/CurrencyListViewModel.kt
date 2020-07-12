@@ -42,7 +42,7 @@ internal class CurrencyListViewModel(
         }
     }
 
-    private fun postErrorAction() {
+    fun postErrorAction() {
         sendAction(CurrencyListAction.CurrencyListFailure)
     }
 }

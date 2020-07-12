@@ -54,17 +54,20 @@ class SignInFragment : BaseContainerFragment() {
             }
             is SignInViewState.InvalidEmail -> {
                 binding.btnSignIn.isEnabled = false
+                binding.btnSignIn.alpha = 0.6f
                 binding.tilEmail.error = getString(viewState.error)
                 binding.tilEmail.isErrorEnabled = true
             }
             is SignInViewState.InvalidPassword -> {
                 binding.btnSignIn.isEnabled = false
+                binding.btnSignIn.alpha = 0.6f
                 binding.tilPassword.error = getString(viewState.error)
                 binding.tilPassword.isErrorEnabled = true
             }
             is SignInViewState.ValidDataUser -> {
                 binding.tilEmail.isErrorEnabled = false
                 binding.tilPassword.isErrorEnabled = false
+                binding.btnSignIn.alpha = 1f
                 binding.btnSignIn.isEnabled = true
             }
         }

@@ -3,4 +3,9 @@
     <string name="sign_out">Cerrar Sesión</string>
     <string name="hello_user">Hola %s</string>
     <string name="error_connection_internet">Error en la conexión, intente nuevamente.</string>
+    <string name="value">Valor</string>
+    <string name="code">Código</string>
+    <string name="currency">Unidad Medida</string>
+    <string name="date">Fecha</string>
+    <string name="search">Buscar</string>
 </resources>
