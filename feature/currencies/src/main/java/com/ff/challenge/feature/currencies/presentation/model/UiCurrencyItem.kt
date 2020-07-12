@@ -10,4 +10,15 @@ data class UiCurrencyItem(
     val currency: String,
     val date: String,
     val value: String
-) : Parcelable
+) : Parcelable {
+
+    companion object {
+        fun create() = UiCurrencyItem(
+            code = "",
+            name = "",
+            currency = "",
+            date = "",
+            value = ""
+        )
+    }
+}

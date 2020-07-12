@@ -23,7 +23,7 @@ open class CacheViewModel(
             CacheAction.StoreSessionSuccess     -> CacheViewState.StoreSessionSuccess
             CacheAction.StoreSessionFailure     -> CacheViewState.StoreSessionFailure
             CacheAction.SignOutSuccess          -> CacheViewState.SignOutSuccess
-            CacheAction.SignOutFailure          -> CacheViewState.SignOuFailure
+            CacheAction.SignOutFailure          -> CacheViewState.SignOutFailure
         }
 
     fun getSession() {

@@ -18,7 +18,6 @@ class CurrenciesMapper {
         const val PESOS_SUFIX = "CLP"
     }
 
-
     fun RemoteCurrencies.fromRemoteToDomain(): DomainCurrencies {
 
         val currencies = arrayListOf<DomainCurrencyItem>()
@@ -43,7 +42,7 @@ class CurrenciesMapper {
         )
     }
 
-    private fun RemoteCurrencyItem.fromRemoteToDomain() = DomainCurrencyItem(
+    fun RemoteCurrencyItem.fromRemoteToDomain() = DomainCurrencyItem(
         code = code ?: "",
         name = name ?: "",
         currency = currency ?: "",
@@ -51,7 +50,7 @@ class CurrenciesMapper {
         value = "${value?.applyMilesSeparator()} ${getSuffix(currency)}"
     )
 
-    private fun getSuffix(currency: String?) = when (currency) {
+    fun getSuffix(currency: String?) = when (currency) {
         PERCENTAGE -> PERCENTAGE_SUFFIX
         DOLLAR -> DOLLAR_SUFFIX
         PESOS -> PESOS_SUFIX

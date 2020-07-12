@@ -26,7 +26,7 @@ internal class CurrencyListViewModel(
         is CurrencyListAction.CurrencyListFailure -> CurrencyListViewState.CurrencyListFailure
     }
 
-    private fun getCurrencies() {
+    fun getCurrencies() {
         viewModelScope.launch {
             try {
                 useCase.execute().also {

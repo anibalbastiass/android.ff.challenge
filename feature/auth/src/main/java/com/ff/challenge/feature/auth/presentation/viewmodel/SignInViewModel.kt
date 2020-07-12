@@ -68,7 +68,7 @@ internal class SignInViewModel(
         }
     }
 
-    private fun isUserNameValid(username: String): Boolean {
+    fun isUserNameValid(username: String): Boolean {
         return if (username.contains("@")) {
             Patterns.EMAIL_ADDRESS.matcher(username).matches()
         } else {

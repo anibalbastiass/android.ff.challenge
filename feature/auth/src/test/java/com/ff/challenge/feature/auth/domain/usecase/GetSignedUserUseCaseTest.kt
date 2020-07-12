@@ -35,6 +35,12 @@ class GetSignedUserUseCaseTest {
         val email = RandomFactory.generateRandomValidEmail()
         val password = RandomFactory.generateString()
         val domain = UserFactory.makeDomainUser()
-        coEvery { mockRepository.getUserByEmailPassword(email, password) }
+        coEvery { mockRepository.getUserByEmailPassword(email, password) } returns domain
+
+        // when
+        val result = runBlocking { cut.execute(email, password) }
+
+        // then
+        result shouldBeEqualTo domain
     }
 }

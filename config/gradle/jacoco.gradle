@@ -22,12 +22,18 @@ project.afterEvaluate {
             }
             def excludes = [
                     '**/R.class',
+                    '**/BR.class',
                     '**/*$*',
                     '**/R$*.class',
+                    '**/BR$*.class',
                     '**/BuildConfig.*',
                     '**/Manifest*.*',
                     '**/*Test*.*',
                     'android/**/*.*',
+                    'androidx/databinding/**/*.*',
+
+                    'com/ff/challenge/app/ui/**/*.*',
+                    'com/ff/challenge/app/data/cache/FFSharedPreferenceFactory.*',
 
                     'com/ff/challenge/feature/**/databinding/**',
                     'com/ff/challenge/feature/**/DataBinderMapperImpl.*',
@@ -39,8 +45,27 @@ project.afterEvaluate {
                     'com/ff/challenge/feature/**/generated/***',
                     'com/ff/challenge/feature/**/ui/**',
 
+                    'com/ff/challenge/library/**/*.*',
+                    'com/ff/challenge/app/FFApplication.*',
+                    'com/ff/challenge/**/databinding/**',
+                    'com/ff/challenge/**/DataBinderMapperImpl.*',
+                    'com/ff/challenge/**/FeatureKodeinModule.*',
+                    'com/ff/challenge/**/DataBindingInfo.*',
+                    'com/ff/challenge/**/DataBinderMapperImpl.InnerBrLookup.*',
+                    'com/ff/challenge/**/DataBinderMapperImpl.InnerLayoutIdLookup.*',
+                    'com/ff/challenge/**/BR.*',
+                    'com/ff/challenge/**/generated/***',
+                    'com/ff/challenge/FeatureCurrenciesNavGraphArgs.*',
+                    'com/ff/challenge/AppModuleKt.*',
+
                     'com/ff/challenge/feature/**/data/AuthDataModuleKt.*',
                     'com/ff/challenge/feature/**/domain/AuthDomainModuleKt.*',
+                    'com/ff/challenge/feature/**/FeatureCurrenciesNavGraphArgs.*',
+                    'com/ff/challenge/feature/**/AuthNavigator.*',
+                    'com/ff/challenge/feature/**/CurrenciesNavigator.*',
+                    'com/ff/challenge/feature/**/data/local/dao/*.*',
+                    'com/ff/challenge/feature/**/data/local/AuthDatabase_Impl.*',
+                    'com/ff/challenge/feature/**/data/local/AuthDatabase.*',
                     'com/ff/challenge/feature/**/presentation/AuthPresentationModuleKt.*',
                     'com/ff/challenge/feature/**/ui/AuthUiModuleKt.*',
 
