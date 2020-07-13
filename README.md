@@ -36,9 +36,9 @@ Technical test for Senior Android Developer
 
 ## Data Test
 
-    * Email: user1@ff.com / Password: asasdasd
-    * Email: user2@ff.com / Password: asasdasd
-    * Email: user3@ff.com / Password: asasdasd
+    * Email: user1@ff.com / Password: asdasd
+    * Email: user2@ff.com / Password: asdasd
+    * Email: user3@ff.com / Password: asdasd
     
 ## Flavors Environments
 
